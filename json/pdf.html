@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</head>
+<body>
+    <fieldset>
+        <center><h1>Pdf</h1></center>
+        <br>
+        <br>
+        <label>Name</label>
+        <input type="text" name="" id="name">
+        <br>
+        <br>
+        <label>Email</label>
+        <input type="email" name="" id="email">
+        <br>
+        <br>
+        <label>City</label>
+        <input type="text"id="city">
+        <br>
+        <br>
+        <input type="button" value="downloard pdf"  id="btn">
+    </fieldset>
+    <script>
+        document.getElementById("btn").addEventListener('click',()=>
+        {
+            var name=document.getElementById("name").value;
+            var email=document.getElementById("email").value;
+            var city=document.getElementById("city").value;
+        
+        const {jsPDF}=window.jspdf;
+
+        const doc=new jsPDF();
+
+        doc.text(`name:${name}`,10,10);
+        
+        doc.text(`email:${email}`,10,20);
+
+        
+        doc.text(`city:${city}`,10,30);
+
+       doc.save("my-data.pdf"); 
+
+        }
+    );
+    </script>
+</body>
+</html>

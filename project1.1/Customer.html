@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1px" align="CENTER" HEIGHT="100PX" WIDTH="800"><tr><td>
+        <h3><center><u>Customer form</u></center></h3>
+        <table border="1px"cellpadding="10"cellspacing="10" align="CENTER" HEIGHT="50PX" WIDTH="700">
+            <tr>
+                <td>enter name</td><td><input type="text" id="name" </td>
+            </tr>
+            <tr>
+                <td>price</td>
+                <td><input type="text" id="price" required></td>
+            </tr>
+            <tr>
+                <td>
+                    qty
+                </td>
+                <td>
+                    <input type="text" id="qty" required>
+                </td>
+                </tr>
+                </table>
+                <table border="1px" cellpadding="10" cellspacing="10" align="CENTER" HEIGHT="50PX" WIDTH="700">
+                    <tr>
+                        <td>
+                            Bill
+                        </td>
+                        <td>
+                            <input type="text" id="bill" required>
+                        </td>
+                        <tr>
+                            <td>
+                                Dis
+                            </td>
+                            <td>
+                                <input type="text" id="dis" required>
+                            </td>
+                            <tr>
+                                <td>Net</td>
+                                <td><input type="text" id="net" required></td>
+                            </tr>
+                        </tr>
+                    </tr>
+                </table>
+                
+                <table border="1px" cellpadding="10" cellspacing="10" align="CENTER" HEIGHT="50PX" WIDTH="700">
+                    <tr>
+                        
+                        <td><center><input type="button" id="submit" class="col1 " value="Submit" onclick="show()"></center></td>
+                        <td>
+                            <input type="button" id="p" class="col2" value="Reset"onclick="reset()">
+
+                        </td>
+                    </tr>
+                </table>
+                </table>
+        
+
+               
+
+                
+
+
+                </td>
+            </tr>
+
+    </table>
+    <script>
+        var p,q,b,d,net;
+        function show()
+{
+
+        p=document.getElementById("price").value 
+        q=document.getElementById("qty").value
+        b=p*q
+        document.getElementById("bill").value=b
+        d=b*.10
+        d=document.getElementById("dis").value=d  
+    net=b-d
+    document.getElementById("net").value=net
+
+
+      }
+function reset()
+{
+    document.getElementById("name").value =""
+    document.getElementById("price").value =""
+        document.getElementById("qty").value=""
+        document.getElementById("bill").value="" 
+        document.getElementById("dis").value=""
+        document.getElementById("net").value =""
+        
+}
+      
+
+    </script>
+</body>
+</html>

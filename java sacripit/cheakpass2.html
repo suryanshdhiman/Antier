@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Password Confirmation</title>
+<style>
+    .error {
+        color: red;
+    }
+</style>
+</head>
+<body>
+
+<form id="passwordForm">
+    <div>
+        <label for="newPassword">New Password:</label>
+        <input type="password" id="newPassword" name="newPassword">
+    </div>
+    <div>
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword">
+        <span id="confirmError" class="error"></span>
+    </div>
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+    const form = document.getElementById('passwordForm');
+    const newPasswordInput = document.getElementById('newPassword');
+    const confirmPasswordInput = document.getElementById('confirmPassword');
+    const confirmError = document.getElementById('confirmError');
+
+    form.addEventListener('submit', function(event) {
+        if (newPasswordInput.value !== confirmPasswordInput.value) {
+            confirmError.textContent = "Passwords don't match";
+            event.preventDefault(); // Prevent form submission
+        } else {
+            confirmError.textContent = "";
+        }
+    });
+</script>
+
+</body>
+</html>

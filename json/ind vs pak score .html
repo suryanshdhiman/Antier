@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Line Chart Comparison: India vs. Pakistan</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div style="width: 75%; margin: 0 auto;">
+        <canvas id="scoreComparisonChart"></canvas>
+    </div>
+    <script>
+        const ctx = document.getElementById('scoreComparisonChart').getContext('2d');
+
+const scoreComparisonChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ['Over 1', 'Over 2', 'Over 3', 'Over 4', 'Over 5', 'Over 6', 'Over 7', 'Over 8', 'Over 9', 'Over 10'],
+        datasets: [
+            {
+                label: 'India',
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                data: [5, 15, 25, 35, 50, 65, 75, 90, 105, 140],
+                fill: false
+            },
+            {
+                label: 'Pakistan',
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                data: [7, 18, 27, 40, 55, 70, 85, 95, 110, 125],
+                fill: false
+            }
+        ]
+    },
+    options: {
+        responsive: true,
+        scales: {
+            x: {
+                display: true,
+                title: {
+                    display: true,
+                    text: 'Overs'
+                }
+            },
+            y: {
+                display: true,
+                title: {
+                    display: true,
+                    text: 'Runs'
+                },
+                suggestedMin: 0,
+                suggestedMax: 150
+            }
+        }
+    }
+});
+
+    </script>
+</body>
+</html>

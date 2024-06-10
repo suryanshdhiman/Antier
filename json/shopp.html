@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .shop {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 300px;
+            text-align: center;
+            margin-bottom: 20px; /* Add margin to create space between products */
+        }
+        .productimage {
+            width: 50%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .producttitle {
+            font-size: 1.5em;
+            margin: 10px 0;
+            color: #333;
+        }
+        .productname {
+            font-size: 1.2em;
+            margin: 8px 0;
+            color: #666;
+        }
+        .productprice {
+            font-size: 1.2em;
+            margin: 8px 0;
+            color: #e91e63;
+        }
+        .productrating {
+            font-size: 1em;
+            margin: 8px 0;
+            color: #ffa000;
+        }
+        .productviews {
+            font-size: 1em;
+            margin: 8px 0;
+            color: #ffa000;
+        }
+
+        .con {
+            display: grid;
+grid-template-columns: 230px 230px 230px 230px;
+grid-gap: 30px;
+            align-items: center; /* Center items horizontally */
+        }
+    </style>
+</head>
+<body>
+    <div class="con"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const products = [
+                {
+                    "title": "Shoes",
+                    "name": "adidas",
+                    "price": "Rs 400",
+                    "image": "d.jpg",
+                    "rating": 3,
+                    "views": 1500
+                },
+                {
+                    "title": "Shoes",
+                    "name": "adidas",
+                    "price": "Rs 1400",
+                    "image": "d2.jpg",
+                    "rating": 5,
+                    "views": 2500
+                },
+                {
+                    "title": "Shoes",
+                    "name": "Nike",
+                    "price": "Rs 3400",
+                    "image": "d3.jpg",
+                    "rating": 5,
+                    "views": 2500
+                }
+            ];
+
+            const container = document.querySelector('.con');
+
+            products.forEach(product => {
+                const shopDiv = document.createElement('div');
+                shopDiv.classList.add('shop');
+
+                const title = document.createElement('h2');
+                title.classList.add('producttitle');
+                title.textContent = product.title;
+
+                const name = document.createElement('p');
+                name.classList.add('productname');
+                name.textContent = product.name;
+
+                const price = document.createElement('p');
+                price.classList.add('productprice');
+                price.textContent = product.price;
+
+                const image = document.createElement('img');
+                image.classList.add('productimage');
+                image.src = product.image;
+                image.alt = product.title;
+
+                const ratingContainer = document.createElement('p');
+                ratingContainer.classList.add('productrating');
+                for (let i = 0; i < product.rating; i++) {
+                    ratingContainer.innerHTML += '<span class="star">&#9733;</span>';
+                }
+
+                const views = document.createElement('p');
+                views.classList.add('productviews');
+                views.textContent = product.views + " views";
+
+                shopDiv.appendChild(title);
+                shopDiv.appendChild(name);
+                shopDiv.appendChild(price);
+                shopDiv.appendChild(image);
+                shopDiv.appendChild(ratingContainer);
+                shopDiv.appendChild(views);
+
+                container.appendChild(shopDiv);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+ 
+</style>
+<body>
+    <form align="center">
+        <fieldset>
+            E-SHOP<br><br>
+<label>Availability</label>
+            <select value="available"  id="avail" multiple>
+                <option value="ink">ink</option>
+                <option value="book">book</option>
+                <option value="soap">soap</option>
+            </select>
+            <label>Purchase</label>
+            <select id="pur" >
+            </select><br><br>
+           
+            <input type="button" value=">" onclick="add()">
+            <input type="button" value="<" onclick="remove()"><br><br>
+            <label>Bill </label>
+            <input type="text" id="bill" size="1"><br><br>
+            <label >Count</label>
+            <input type="text" id="count" size="1">
+        </fieldset>
+    </form>
+</body>
+<script>
+var avail,pur,newitem,count;
+    let b=0;
+    function add()
+    {
+avail=document.getElementById("avail")
+pur=document.getElementById("pur")
+count=document.getElementById("count")
+newitem=document.createElement("option")
+newitem.text=avail.options[avail.selectedIndex].text
+pur.add(newitem)
+count.value=pur.length
+if(newitem.text=="ink")
+{
+b=b+10
+}
+else if(newitem.text=="book")
+{
+b=b+20
+}
+else
+{
+b=b+30
+}
+document.getElementById("bill").value=b
+}
+function remove()
+{
+    var removeitem=document.getElementById("pur")
+    removeitem.text=pur.options[pur.selectedIndex].text
+    console.log(removeitem.text)
+    count.value=pur.length
+    pur.remove(removeitem)
+   
+    if(removeitem.text=="ink")
+    {
+        b=b-10
+    }
+    else if (removeitem.text=="book")
+    {
+        b=b-20
+    }
+    else  
+    {
+        b=b-30
+    }
+    document.getElementById("bill").value=b;
+}
+</script>
+</html>

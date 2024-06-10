@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form>
+    <fieldset>
+        <h2><center>colour change</center></h2>
+        <br>
+        <br>
+        <input type="button"value="start"id=st onclick="show()">
+        <input type="button"value="stop"id=tp onclick="stop()">
+
+
+    </fieldset>
+    </form>
+    <script>
+        var colour=["yellow","red","black"];
+        var x,i=0;
+        function show(){
+        {
+            x=setInterval(start,2000)
+        }
+        function start()
+        {
+            document.bgColor=colour[i]
+            i++
+            if(i==3)
+            i=0;
+        }
+    }
+    function stop()
+    {
+        clearInterval(x);
+    }
+    </script>
+</body>
+</html>

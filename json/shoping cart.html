@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .shop {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 300px;
+            text-align: center;
+        }
+        .productimage {
+            width: 50%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .producttitle {
+            font-size: 1.5em;
+            margin: 10px 0;
+            color: #333;
+        }
+        .productname {
+            font-size: 1.2em;
+            margin: 8px 0;
+            color: #666;
+        }
+        .productprice {
+            font-size: 1.2em;
+            margin: 8px 0;
+            color: #e91e63;
+        }
+        .productrating {
+            font-size: 1em;
+            margin: 8px 0;
+            color: #ffa000;
+        }
+        .productviews {
+            font-size: 1em;
+            margin: 8px 0;
+            color: #ffa000;
+        }
+    </style>
+</head>
+<body>
+    <div class="shop">
+        <h2 class="producttitle"></h2>
+        <p class="productname"></p>
+        <p class="productprice"></p>
+        <img class="productimage" src="" alt="Product Image">
+        <p class="productrating"></p>
+        <p class="productviews"></p>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const product = {
+                "title": "Shoes",
+                "name": "adidas",
+                "price": "Rs 400",
+                "image": "d.jpg",
+                "rating": 5,
+                "views": 1500
+            };
+
+            document.querySelector('.producttitle').textContent = product.title;
+            document.querySelector('.productname').textContent = product.name;
+            document.querySelector('.productprice').textContent = product.price;
+            document.querySelector('.productimage').src = product.image;
+            document.querySelector('.productviews').textContent = product.views + " views";
+
+            const ratingContainer = document.querySelector('.productrating');
+            ratingContainer.innerHTML = '';
+
+            for (let i = 0; i < product.rating; i++) {
+                ratingContainer.innerHTML += '<span class="star">&#9733;</span>';
+            }
+        });
+    </script>
+</body>
+</html>

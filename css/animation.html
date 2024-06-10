@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.con{
+    background-color: blue;
+    height: 80vh;
+    width: 80vw;
+}
+.box{
+    width: 70px;
+    height: 70px;
+    background-color: red;
+    animation: myanim 2s ease-in-out 3s infinite alternate,
+    anim 2s ease-in-out 3s infinite alternate; ; 
+
+
+}
+@keyframes myanim {
+    from{
+        background-color: red;
+    }
+    to{
+        background-color: aqua;
+    }
+}
+
+@keyframes anim{
+    0%{transform: translateX(0vw)rotate(72deg);
+}
+     20%{transform:translateX(20vw) rotate(144deg);
+}
+
+   50%{transform:  translateX(40vw) rotate(216deg);
+}
+80%{transform:  translateX(60vw) rotate(288deg);
+
+}
+100%{transform:   translateX(80vw) rotate(360deg) ;
+}
+}
+    </style>
+</head>
+<body>
+    <div class="con">
+    <div class="box">box</div>
+    </div>
+</body>
+</html>

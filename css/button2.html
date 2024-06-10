@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body{
+            background-color: black;
+            
+        }
+    
+        .na ul, .na li
+        {
+            margin: 0;
+padding: 0;
+        }
+         .na ul{
+            background-color: gray;
+            list-style: none;
+            width: 100%;
+         }
+         .na li{
+            float: left;
+            position: relative;
+            width: auto;
+         }
+         .na a{
+            background: #30a6e6;
+            color: white;
+            display: block;
+            font-weight: 400;
+            font-size: 13px;
+            font-family: 'poppins',sans-serif;
+            padding: 15px 55px;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.25 ease;
+         }
+         .na li:hover a{
+            background: red;
+         }
+         .sub{
+            left: 0;
+            opacity: 0;
+            position: absolute;
+            top: 35px;
+            visibility: hidden;
+            z-index: 1;
+         }
+            .sub ul li:hover {
+                opacity: 1;
+                top: 80px;
+                visibility: visible;
+            }
+{
+    opacity: 1;
+    top: 80px;
+    visibility: visible;
+}
+
+    </style>
+    <nav class="na">
+        <ul>
+            <li><a href="">home</a></li>
+            <li><a href="">about</a></li>
+            <li><a href="">contact</a></li>
+            <ul class="sub">
+                <li><a href="">html</a></li>
+                <li><a href="">java</a></li>
+                <li><a href="">css</a></li>
+
+            </ul>
+            
+        </ul>
+    </nav>
+</body>
+</html>

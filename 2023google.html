@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+         .fullbody
+         {
+            display: grid;
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    background-color:white;
+   
+
+        }
+.head{
+    display: flex;
+    padding-top: 20px;
+    padding-left: 4px;
+    justify-content:flex-start;
+    word-spacing : 6px; 
+}
+
+  .list
+        {
+            list-style-type: none;
+
+        }
+        li{
+            display: inline;
+          
+        }
+        .eng 
+        {
+            padding-left: 819px;
+        }
+
+        .box1{
+    display: grid;
+    background-color: rgb(30, 29, 29);
+    margin-top: 4%;
+    margin-left: 4.5%;
+    border-radius: 20px;
+    height: 400px;
+   
+}
+.img1{
+    padding-left: 630px;
+    padding-top: 0;
+    padding-bottom: 0;
+        
+}
+.box2{
+    color: white;
+    font-size: 2.5rem;
+    position: absolute;
+    margin-top: 1%;
+    margin-left: 5%;
+    font-family: sans-serif;
+    
+}
+.box3{
+    position: absolute;
+    color: white;
+    margin-top: 10%;
+    margin-left: 5%;
+    font-size: larger;
+    font-family: sans-serif;
+}
+.box4
+   {
+    position : absolute;
+    border-radius: 15px;
+    margin-top: 20%;
+    margin-left: 5%;
+    font-size: 22px;
+    background-color:blue;
+    height: 50px;
+    width: 200px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center; 
+    padding: 10px;   
+}
+div:hover .box4
+{
+background-color: skyblue;
+}
+  
+.box5{
+    display: flex;
+    height: 50%;
+    
+}
+
+
+.class1{
+    display: flex;
+    height: 50%;
+    
+}
+.image3{
+ margin-top: 8%;
+ position: absolute;
+ margin-left: 27%;
+ 
+
+}
+.class2{
+    font-size: 2rem;
+    padding-left: 10%;
+    margin-top: 5%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.class3{
+    font-size: 1.5rem;
+    margin-left: 1.5%;
+    margin-top: 12%;
+    position: absolute;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.bt1{
+    font-size: 1.5rem;
+   border: 2px solid black;
+    margin-top: 13%;
+    position: absolute;
+    height: 60px;
+    width: 140px;
+   border-radius: 10px;
+  
+}
+.bt1:hover{
+    cursor: pointer;
+    background-color:steelblue  ;
+}
+.container1{
+ border: 2px solid black ;
+    display: flex;
+    height: 400px;
+    width: 600px;
+    border-radius: 20px;
+    background-color: rgba(252, 246, 246, 0.916);
+}
+.container2{
+    position: absolute;   
+    border: 2px solid black ;
+    height: 400px;
+    width: 600px;
+    margin-left: 47%;
+    border-radius: 20px;
+    background-color: blue;
+    
+}
+.head2{
+    display: flex;
+   margin: 30px;
+   margin-left: 6.5%;
+}
+.image4{
+    position: absolute;
+    margin-left: 45%;
+    margin-top: 10%;
+   
+}
+.con{
+    position: absolute;
+    font-size: 2.2rem;
+    padding-top: 35px;
+    padding-left: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.skill{
+    position: absolute;
+    padding-top: 120px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: larger;
+    padding-left: 25px;
+}
+.bt2{
+    font-size: 25px;
+    position: absolute;
+    margin-top: 52%;
+    padding: 10px;
+    border: 2px solid black;
+    height: 50px;
+    border-radius: 10px;
+    margin-left: 13%;  
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.bt2:hover{
+    cursor: pointer;
+    background-color: antiquewhite;
+}
+
+.head3
+ {
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: 350px 350px 350px;
+  grid-gap: 20px;
+  grid-template-rows: 340px ;
+  margin-left: 8%;
+  
+}
+.items1:hover,.items2:hover,.items3:hover {
+  border: 2px solid black;
+  border-radius: 20px;
+  
+}
+
+.grid1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.image5 {
+  flex: 1;
+  border-radius: 18px 18px 0 0; 
+  overflow: hidden; 
+}
+
+.image img {
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+}
+
+.content {
+  padding: 20px;
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 30px;
+}
+
+.text{
+    display: flex;
+    padding-left: 5%;
+    padding-right: 6%;
+    justify-content: space-between;
+}
+.text1{
+    font-size: 50px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding-top: 0;
+}
+.text2{
+    padding-top: 20px;
+    font-size: larger;
+}
+.main{
+    padding-top: 50px;
+    display: grid;
+    justify-content: space-between;
+    padding-left: 50px;
+    padding-right: 50px;
+    grid-template-columns: 50vh 50vh 50vh 50vh;
+width: 50vh;
+height: 60vh;     
+}
+.hover , .hover1,.hover3 , .hover2{
+position: absolute;
+}
+
+
+
+.sq1, .sq2, .sq3, .sq4{
+   
+    padding:  10px;
+    
+}
+.sq1:hover, .sq2:hover, .sq3:hover, .sq4:hover{
+    border: 2px solid black;
+    border-radius: 20px;
+    cursor: pointer;
+}
+         
+.hover-image:hover
+    {
+        
+       transition: backgroung-image 0.3s ease;
+       background-image: url("https://io.google/2023/app/images/stacks_mobile-hover.svg");
+       background-size: cover;
+    }
+    .hover:hover{
+        opacity: 0;
+    }
+
+    .hover-image1:hover
+    {
+        
+       transition: background-image 0.3s ease;
+       background-image: url("https://io.google/2023/app/images/stacks_web-hover.svg");
+       background-size: cover;
+    }
+    .hover1:hover{
+        opacity: 0;
+    }
+    .hover-image2:hover
+    {
+        
+       transition: background-image 0.3s ease;
+       background-image: url("https://io.google/2023/app/images/stacks_ai-hover.svg");
+       background-size: cover;
+    }
+    .hover2:hover{
+        opacity: 0;
+    }
+
+    .hover-image3:hover
+    {
+        
+       transition: background-image 0.3s ease;
+       background-image: url("https://io.google/2023/app/images/stacks_cloud-hover.svg");
+       background-size: cover;
+    }
+    .hover3:hover{
+        opacity: 0;
+    }
+
+    .your{
+    display: flex;
+    padding-right: 70px;
+    padding-top: 30px;
+    justify-content: space-between;
+    padding-left: 70px;
+   
+}
+.s1{
+    font-size: 60px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.s2{
+    padding-top: 35px;
+    font-size: larger;
+}
+.grow{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 40px;
+    
+}
+.h2, .h5,.h8 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 25px;
+    padding-top: 15px;
+}
+.h3, .h6,.h9
+{
+    font-size: 15px;
+    padding-top: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.a, .aa, .aaa{
+
+    border-radius: 22px;
+    margin-left: 100px;
+    margin-right: 78px;
+    background-color: rgb(224, 225, 226);
+    padding: 17px;
+}
+
+.b{
+    display: flex;
+    margin-top: 75px;
+    border-radius: 20px;
+    border: 1px solid black;
+    overflow: hidden;
+    background-color: black;
+    margin-left: 3%;
+    margin-right: 2%;
+}
+.small{
+    padding-left: 30px;
+    padding-top: 20px;
+    color: white;
+    position: absolute;
+    font-size: 80px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   ;
+}
+.bt{
+    padding-left: 30px;
+    display: flex;
+    margin-top: 70px;
+    
+   background-color:black;
+    color: white;
+    border: 50px solid black;
+    overflow: hidden;
+    
+}
+.nav1{
+  
+    justify-content: space-between  ;
+   
+ 
+}
+.icon{
+   display: flex;
+    padding-left: 0px;
+    padding-top: 600px;
+}
+
+
+ .two, .three, .four, .five, .six, .drop{
+   padding-left: 25px;
+   
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.one:hover{
+    font-weight: bolder;
+    font-size: 100px;
+}
+.two:hover, .three:hover, .four:hover, .five:hover, .six:hover, .drop:hover, .one:hover{
+    cursor: pointer;
+}
+.twi, .in, .gt, .sun, .tube{
+    padding-left: 60px;
+    font-size: larger;
+    justify-content: space-around;
+}
+.twi:hover, .in:hover, .gt:hover, .sun:hover, .tube:hover{
+    cursor: pointer;}
+</style>
+<body>
+    <div class="fullbody">
+    
+        <div class="head" >
+            <ul>
+                <li>
+            <img src="https://io.google/2023/app/images/Logo.svg" alt=""></li>
+            <li>Watch</li>
+            <li>Learn</li>
+            <li>Community</li>
+            <li>About</li>
+            <li class="eng">English</li> 
+            </ul>
+    </div>
+   
+    <div class="box1">
+            <div class="box2">That's a wrap on <br> Google I/O 2023</div>
+            <div class="box3">Catch up on announcement, deep-dives, and anything you may have missed.</div>
+            <div class="box4" >Watch the recaps</div>
+        <div class="img1"><img src="https://io.google/2023/app/images/wrap-hero-homepage.svg" alt="" height="400px" width="600px"></div>
+    </div>
+    </div>
+
+
+    <div class="head2">
+        <div class="container1">
+        <div class="class1">
+            
+            <div class="class2"> <strong>
+                Connect with <br> developers</strong></div>
+            <div class="class3">
+                Join developer <br> communities around the <br> world for networking, <br> meetups, collaborations <br>and more. 
+                <div class="bt1">
+                    Find a <br>Community
+                </div></div>
+            <div class="image3">
+                <img src="https://io.google/2023/app/images/connect-developers-desktop-light.svg" alt="" height="200px" width="200px">
+            
+                </div>
+                </div>
+        </div>
+        <div class="container2">
+            <div class="con">Continue learning</div>
+            <div class="skill">Grow your skill around the <br>
+                Google technology you love</div>
+                <div class="bt2">Browse Topics</div>
+           
+            
+          
+            <div class="image4">
+                <img src="https://io.google/2023/app/images/browse-topics.svg" alt="">
+            </div>
+            </div>
+        
+            </div>
+
+            <div class="head3">
+                <div class="items1">
+                  <div class="grid1">
+                    <div class="image5"><img src="https://io.google/2023/app/images/recap-video-list.png" alt="Recap Video"></div>
+                    <div class="content">Watch the recap videos</div>
+                  </div>
+                </div>
+                <div class="items2">
+                  <div class="grid1">
+                    <div class="image5"><img src="https://io.google/2023/data/im/396cd2d5-9fe1-4725-a3dc-c01bb2e2f38a.webp"height="250px"  width="380px" alt="Image 2"></div>
+                    <div class="content">Google Keynote</div>
+                  </div>
+                </div>
+                <div class=" items3">
+                  <div class="grid1">
+                    <div class="image5"><img src="https://io.google/2023/data/im/9fe491dd-cadc-4e03-b084-f75e695993ea.webp" height="250px"  width="380px" alt="Image 3"></div>
+                    <div class="content">Developer Keynote</div>
+                  </div>
+                </div>
+              </div>
+              <div class="text">
+                <div class="text1">What are you developing for?</div>
+                <div class="text2"><a href="https://www.example.com" >View all content</a></div>
+              </div>
+
+              <div class="main">
+
+                <div class="sq1">
+
+                    <div >
+                        <div class="hover"><img src="https://io.google/2023/app/images/stacks_mobile-hover.svg" alt=""></div>
+                        <div class="hover-image"><img src="https://io.google/2023/app/images/stacks_mobile.svg" alt=""></div>
+                        <div class="pax"><h1>Mobile</h1> <br>
+                        Develop for a range of audiances and form factors.</div>
+                    </div>
+                    </div>
+                    
+                    <div class="sq2">
+                    <div>
+                    
+                        <div class="hover1"><img src="https://io.google/2023/app/images/stacks_web-hover.svg" alt=""></div>
+                       <div class="hover-image1"><img src="https://io.google/2023/app/images/stacks_web.svg" alt=""></div>
+                        <div class="pax1"><h1>Web</h1> <br>Create fast, secure sites and apps for the <br>open web</div>
+                        </div>
+                        </div>
+                    
+                        <div class="sq3">
+                       
+                        <div >
+                            <div class="hover2"><img src="https://io.google/2023/app/images/stacks_ai.svg" alt=""></div>
+                           <div class="hover-image2"><img src="https://io.google/2023/app/images/stacks_ai-hover.svg" alt=""></div>
+                            <div class="pax2"><h1>AI</h1> Bring the power of machine learning <br> to apps and workflows.</div>
+                        </div>
+                        </div>
+                        <div class="sq4">
+                   
+                    <div>
+                        <div class="hover3"><img src="https://io.google/2023/app/images/stacks_cloud.svg" alt=""></div>
+                        <div class="hover-image3"><img src="https://io.google/2023/app/images/stacks_cloud-hover.svg"alt=""></div>
+                        <div class="pax3"><h1>Cloud</h1> Simplify and scale the <br>end to end development</div>
+                    </div>
+                        </div>
+              </div>
+              <div class="your">
+                <div class="s1">Grow your skills</div>
+                <div class="s2"><a href="www.wifi.com">view all learning material</a></div>
+            </div>
+
+            <div class="grow">
+                <div>   
+                <div>
+                <div >
+                    <div class="h1"><img src="https://io.google/2023/app/images/codelabs-icon.svg" alt=""></div>
+                    <div class="h2">Codelabs and pathways</div>
+                    <div class="h3">Start building today with self-placed coding <br> exercise</div>
+                </div>
+                </div>
+                </div>
+                <div class="aa">
+                <div >
+                <div>
+                    <div class="h4"><img src="https://io.google/2023/app/images/workshops-icon.svg" alt=""></div>
+                    <div class="h5">Workshops</div>
+                    <div class="h6">Gain skills with guided codelabs led by <br> google experts</div>
+                </div>
+                </div>
+                </div>
+                <div class="aaa">
+                <div>
+                <div>
+                    <div class="h7"><img src="https://io.google/2023/app/images/demos-icon.svg" alt=""></div>
+                    <div class="h8">Product demos</div>
+                    <div class="h9">Discover how google's developer product work.</div>
+                </div>
+                </div>
+                </div>
+            </div>
+
+
+            <div class="b"> 
+               
+                 <img src="https://io.google/2023/app/images/seeyounextyear.svg" alt="">
+          
+                <div class="small">See you next year</div>
+            </div>
+
+
+            <div class="bt">
+                <div class="nav">
+                
+                <div class="nav1">
+                    <div class="one">Google</div><br><br><br>
+                    <div class="two">I/O 2022</div><br><br>
+                    <div class="three">I/O Puzzle</div><br><br>
+                    <div class="four">Privacy & terms</div><br><br>
+                    <div class="five">Community Guidelines</div><br><br>
+                    <div class="six">FAQ</div><br><br>
+                    <div class="seven">English </div><br><br>
+                    </div>
+                </div>
+                
+                <div class="icon">
+                
+                <div class="twi"><img src="https://io.google/2023/app/images/ic_twitter.svg" alt=""></div>
+                <div class="in"><img src="https://io.google/2023/app/images/ic_linkedin.svg" alt=""></div>
+                <div class="gt"><img src="https://io.google/2023/app/images/ic_googledev.svg" alt=""></div>
+                <div class="tube"><img src="https://io.google/2023/app/images/ic_youtube.svg" alt=""></div>
+                <div class="sun"><img src="https://io.google/2023/app/images/ic_darkmode.svg" alt=""></div>
+            </div>
+    
+       
+            </div>
+                    
+</div>
+                        
+</body>
+</html>

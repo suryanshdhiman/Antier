@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Slider</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <style>
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+        .swiper-slide {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .product {
+            text-align: center;
+            margin: 20px;
+        }
+        .star {
+            color: gold;
+        }
+    </style>
+</head>
+<body>
+    <div class="swiper-container">
+        <div class="swiper-wrapper" id="products-container"></div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const products = [
+                {
+                    "title": "Best Selling Product",
+                    "name": "XYZ Powder",
+                    "price": "49.99 Rs",
+                    "rating": 4,
+                    "views": 1500,
+                    "image": "d.jpg"
+                },
+                {
+                    "title": "New Arrival",
+                    "name": "ABC Cream",
+                    "price": "29.99 Rs",
+                    "rating": 5,
+                    "views": 2000,
+                    "image": "d2.jpg"
+                },
+                {
+                    "title": "Popular Choice",
+                    "name": "LMN Gel",
+                    "price": "39.99 Rs",
+                    "rating": 3,
+                    "views": 1800,
+                    "image": "d3.jpg"
+                }
+            ];
+
+            const productsContainer = document.getElementById('products-container');
+
+            products.forEach(product => {
+                const productDiv = document.createElement('div');
+                productDiv.className = 'swiper-slide product';
+
+                productDiv.innerHTML = `
+                    <h2 class="product-title">${product.title}</h2>
+                    <p class="product-name">${product.name}</p>
+                    <p class="product-price">${product.price}</p>
+                    <p class="product-views">${product.views} views</p>
+                    <img class="product-image" src="${product.image}" alt="${product.name}">
+                    <div class="product-rating"></div>
+                `;
+
+                const ratingContainer = productDiv.querySelector('.product-rating');
+                ratingContainer.innerHTML = '';  // Clear existing stars
+
+                for (let i = 0; i < product.rating; i++) {
+                    ratingContainer.innerHTML += '<span class="star">&#9733;</span>';
+                }
+
+                productsContainer.appendChild(productDiv);
+            });
+
+            new Swiper('.swiper-container', {
+                loop: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            });
+        });
+    </script>
+</body>
+</html>

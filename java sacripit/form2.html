@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <center><strong> INCOME OVER EXP</strong></center>
+        <label>Enter your income</label>
+        <input type="text"name=""id="in"> <br>
+        <label>Enter your expanse</label>
+<input type="text"name=""id="exp"><br>
+<label>result</label>
+<input type="text"name=""id="r"> <br>
+<input type="button" value="set" onclick="show()">&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+<input type="button" value="reset" >&nbsp;&nbsp;    
+</fieldset>
+<script>
+    var a,b,r
+    function show()
+    {
+        a=parseInt(document.getElementById("in").value)
+        b=parseInt(document.getElementById("exp").value)
+        r=parseInt(document.getElementById("r").value)
+        if (a>b)
+        {
+document.getElementById("r").value=("profit")
+        }
+else
+{
+    document.getElementById("r").value=("loss")
+}
+    }
+</script>
+</body>
+</html>

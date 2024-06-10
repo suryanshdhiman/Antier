@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My 1 chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h2>My First Chart</h2>
+    <canvas id="mychart" style="width: 100px; max-width: 600px;"></canvas>
+
+    <script>
+        var xvalues = ["India", "USA", "UK", "Spain"];
+        var yvalues = [100, 200, 300, 400];
+        var bcolor = ["red", "green", "yellow", "blue"];
+
+        new Chart("mychart", {
+            type: "pie",
+            data: {
+                labels: xvalues,
+                datasets: [{
+                    data: yvalues,
+                    backgroundColor: bcolor
+                }]
+            }
+        });
+    </script>
+</body>
+</html>

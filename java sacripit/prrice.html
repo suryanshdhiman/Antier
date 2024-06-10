@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <center><h2>e-shop</h2></center>
+            <label>avi</label>
+            <select name="it" id="avi">
+                <option value="option">ink</option>
+<option value="option">book</option>
+<option value="option">pen</option>
+            </select>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<label>pur</label>
+<select name="item2"id=pur>
+    <option value="option"></option>
+    <option value="option"></option>
+    <option value="option"></option>
+</select>
+<br>
+<br>
+<br>
+<br><br>
+<br>
+<input type="button" value=">" onclick="next()">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="button" value="<" onclick="btn()">   
+<br>
+<br>
+<br>
+<br>
+<label>bill</label>
+<input type="text"id="bill" size="4">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<label>count</label>
+<input type="text" id="count" size="4">
+</fieldset>
+    </form>
+    <script>
+var avi,pur;
+function next()
+{
+    var avi=document.getElementById("avi")
+    var pur=document.getElementById("pur")
+    var count=document.getElementById("count")
+
+    var newItem=document.createElement("opation")
+    console.log(newItem)
+    count.value=pur.lenght
+    if(newItem.text=="ink")
+    {
+        b +=10
+    }
+    if(newItem.text=="book")
+    {
+        b +=50
+    }
+    else if(newItem.text=="pen")
+    {
+        b+=25
+    }
+    else
+    {
+        b+=7
+
+    }
+    document.getElementById("bill").value=b
+
+}
+function btn()
+{
+var removeItem=document.getElementById("pur")
+removeItem.text=pur.option[pur.selectedIndex].text
+pur.remove[removeItem]
+count.value=pur.lenght
+console.log(removeItem.text)
+if(removeItem.text==ink)
+{
+b-=10
+}
+if(newItem.text=="book")
+    {
+        b -=50
+    }
+    else if(newItem.text=="pen")
+    {
+        b-=25
+    }
+    else
+    {
+        b-=7
+
+    }
+    document.getElementById("bill").value=b
+}
+
+    </script>
+</body>
+</html>

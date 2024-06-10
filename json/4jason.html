@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <div id="preview"> </div>  
+  
+</body>
+<script>
+    let sale=
+  [ 
+     {
+       
+        'name' :'A',
+        'city' :'X',
+        'amount': 100
+        },
+
+        {
+            'name' :'B',
+        'city' :'Y',
+        'amount': 200
+        },
+        {
+            'name' :'C',
+        'city' :'Z',
+        'amount': 300
+        },
+        {
+            'name' :'A',
+        'city' :'Y',
+        'amount': 400
+        },
+        {
+            'name' :'B',
+        'city' :'Z',
+        'amount': 500
+        },
+        {
+            'name' :'C',
+        'city' :'X',
+        'amount': 600
+        },
+        {
+            'name' :'C',
+        'city' :'Z',
+        'amount': 700
+        },
+        {
+            'name' :'C',
+        'city' :'X',
+        'amount': 800
+        },
+        {
+            'name' :'C',
+        'city' :'Y',
+        'amount': 900
+        }
+    ]
+    console.log("sale");
+  
+  //total sale
+  var sum = sale.reduce((acc, cur) => parseInt(acc) +parseInt( cur.amount), 0);
+  document.getElementById("preview").innerHTML = JSON.stringify(sum)
+
+// sale by A sales person
+var salebya = sale.filter(item => item.name === 'A').reduce((acc, cur) => acc + cur.amount, 0);
+console.log("Sale by A:", salebya);
+
+   //sale by x,y,z
+   var salebyx = sale.filter(item => item.city === 'X').reduce((acc, cur) => acc + cur.amount, 0);
+   console.log("Sale by city X:", salebyx);
+   var salebyy = sale.filter(item => item.city === 'Y').reduce((acc, cur) => acc + cur.amount, 0);
+   console.log("Sale by city Y:", salebyy);
+   var salebyz = sale.filter(item => item.city === 'Z').reduce((acc, cur) => acc + cur.amount, 0);
+   console.log("Sale by city Z:", salebyz);
+
+   //show between 450 and 750
+var citysale = sale.filter(item => item.amount >= 450 && item.amount <= 750);
+console.log("Cities with sale between 450 and 750 =", citysale)
+
+//high to low order sale
+const show=sale.sort((a,b)=>b.amount-a.amount);
+console.log("high to low =",show)
+
+//high to low order sale by name
+const showname=sale.sort((a,b)=>b.name-a.name);
+console.log("high to low =",showname)
+
+//lowest sale person
+var lowestSale = sale.sort((a, b) => a.amount - b.amount)[0];
+console.log("Person with the lowest sale:", lowestSale.name);
+
+//person with highest sale
+var hSale = sale.sort((a, b) => b.amount - a.amount)[0];
+console.log("Person with the high sale:", hSale.name);
+
+    </script>
+</html>

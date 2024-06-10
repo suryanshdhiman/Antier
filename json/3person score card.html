@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bar Chart Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div style="width: 75%; margin: 0 auto;">
+        <canvas id="myBarChart"></canvas>
+    </div>
+    <script>
+const ctx = document.getElementById('myBarChart').getContext('2d');
+
+const myBarChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Math', 'Science', 'English', 'History', 'Geography'],
+      
+      
+        datasets: [
+            {
+                label: 'Student A',
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 1,
+                data: [85, 90, 78, 88, 80]
+            },
+            {
+                label: 'Student B',
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1,
+                data: [75, 80, 85, 70, 95]
+            },
+            {
+                label: 'Student C',
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1,
+                data: [90, 85, 92, 95, 85]
+            }
+        ]
+    },
+    options: {
+        responsive: true,
+        scales: {
+            x: {
+                display: true,
+                title: {
+                    display: true,
+                    text: 'Subjects'
+                }
+            },
+            y: {
+                display: true,
+                title: {
+                    display: true,
+                    text: 'Marks'
+                },
+                suggestedMin: 0,
+                suggestedMax: 100
+            }
+        }
+    }
+});
+
+
+    </script>
+</body>
+</html>

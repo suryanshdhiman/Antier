@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        table{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+    <table border="2px" cellpading"20" align="center">
+       <tr><td>
+        <h1 align="center"><strong>Marksheet</strong></h1>
+<label>Enter name &nbsp;&nbsp;</label>
+<input type="text"><br><br>
+<form>
+    <fieldset>
+        <legend>Score</legend>
+        <label>Physics</label>
+        <input type="text" name="" id="physics">&nbsp;
+        <label>Chemistry</label>
+        <input type="text" id="chemistry"><br>
+        <label> Bio</label>
+        <input type="text"id="bio">
+
+    
+    </fieldset>
+</form><br><br>
+<label>Total</label>
+<input type="text" id="total">
+<label>percentage</label>
+<input type="number"id="percentage">
+</td></tr>
+<br><br>
+<tr>
+    <td>
+        <label>Convert to CGPA</label>
+        <input type="text"id="cgpa">
+
+    </td>
+</tr>
+<tr>
+    <td align="center"><input type="button"value="submit"onclick="show()">&nbsp;&nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp; &nbsp;
+        &nbsp;
+        &nbsp;
+<input type="button"value="reset"onclick="reset()">
+
+    </td>
+</tr>
+    </table>
+    <script>
+        var Phy,chem,bio,tol,per,cgpa;
+        function show()
+        {
+            
+        Phy=parseInt(document.getElementById("physics").value)
+        chem=parseInt(document.getElementById("chemistry").value)
+        bio=parseInt(document.getElementById("bio").value)
+
+        tol=Phy+chem+bio;
+        document.getElementById("total").value=tol
+var per=tol/3
+document.getElementById("percentage").value=per
+var cgpa=per/9.5
+document.getElementById("cgpa").value=cgpa
+        }
+
+    </script>
+</body>
+</html>

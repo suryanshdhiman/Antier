@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASHWANI TRADERS - E-SHOP BILL PDF</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+        .box {
+            border: 2px solid black;
+            padding: 20px;
+            font-weight: 900;
+            background-color: white;
+            width: 300px;
+            margin: 0 auto;
+        }
+        .box h2, .box h3 {
+            margin: 0;
+            text-align: center;
+            color: #333;
+        }
+        .box label {
+            font-weight: bold;
+            color: #555;
+        }
+        .box input[type="text"], .box input[type="number"] {
+            padding: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        .box select {
+            width: 64%; 
+            padding: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        .box input[type="file"] {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        .box input[type="button"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .box input[type="button"]:hover {
+            background-color: #45a049;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="box"><br><br>
+        <h2>ASHWANI TRADERS</h2>
+        <h3>E-SHOP BILL PDF</h3><br><br>
+        <label>HR</label>
+        <input type="text" id="hr" size="2">
+        <label>Min</label>
+        <input type="text" id="min" size="2">
+        <label>Sec</label>
+        <input type="text" id="sec" size="2"><r><br><br>
+        <label>Name : </label>
+        <input type="text" placeholder="Enter name" id="name"><br>
+        <label>Items : </label>
+        <select id="item">
+            <option value="cooker">cooker</option>
+            <option value="pan">pan</option>
+            <option value="bowl">bowl</option>
+            <option value="cello">cello bottle</option>
+            <option value="lunchbox">lunchbox</option>
+        </select><br>
+        <label>Quantity : </label>
+        <input type="number" placeholder="Enter quantity" id="quantity"><br>
+        <label>Price : </label>
+        <input type="text" placeholder="Enter price" id="price"><br>
+        <label>Tax : </label>
+        <input type="text" placeholder="Enter tax" id="tax"><br>
+        <label>Total Amount : </label>
+        <input type="text" placeholder="Enter total amount" id="total"><br>
+        <label>Customer Photo: </label>
+        <input type="file" accept="image/*" id="photo"><br>
+
+        <input type="button" value="Download Bill" id="btnpdf">
+    </div>
+
+    <script>
+
+var x = setInterval(startChange, 1000);
+
+function startChange() {
+    var d = new Date();
+    var hr = d.getHours();
+    var min = d.getMinutes();
+    var sec = d.getSeconds();
+    document.getElementById("hr").value = hr;
+    document.getElementById("min").value = min;
+    document.getElementById("sec").value = sec;
+}
+        document.getElementById("btnpdf").addEventListener('click',() => {
+            var name = document.getElementById("name").value;
+            var item = document.getElementById("item").value;   
+            var quantity = document.getElementById("quantity").value;
+            var price = document.getElementById("price").value;
+            var tax = document.getElementById("tax").value;
+            var total = document.getElementById("total").value;
+            var photo = document.getElementById("photo").files[0];
+    
+            //generate bill pdf
+            const { jsPDF } = window.jspdf; 
+            const doc = new jsPDF();
+         //   const tableStyles = {
+         //   textColor: [1, 1, 1], 
+          //    fillColor: [0, 0, 0] 
+          //  };
+          var d = new Date();
+            var hr = d.getHours();
+            var min = d.getMinutes();
+            var sec = d.getSeconds();
+            var time = `${hr}:${min}:${sec}`;
+            var date = `${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()}`;
+            //font and text color
+            doc.setFont("helvetica");
+            doc.setTextColor(255, 0, 0); 
+    
+            doc.text("ASHWANI TRADERS - E-SHOP BILL", 10, 10);
+            
+            // Add customer photo
+            if (photo) {
+                var img = new Image();
+                img.src = URL.createObjectURL(photo);
+                doc.addImage(img, 'JPEG', 90, 20, 50, 50);
+            }
+    
+            doc.autoTable({
+                head: [['Field', 'Value']],
+                body: [['Name', name], ['Item', item], ['Quantity', quantity], ['Price', price], ['Tax', tax], ['Total', total] ,['time', time],['date', date]],
+                startY: 80
+             //   styles: tableStyles
+            });
+    
+            doc.save("User_data.pdf");
+        });
+    </script>
+</body>
+</html>

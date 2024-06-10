@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse Watch</title>
+<style>
+    body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #282c34;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.clock-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #61dafb;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+#clock {
+    font-size: 3rem;
+    color: #282c34;
+}
+
+</style>
+</head>
+<body>
+    <div class="clock-container">
+        <div id="clock"></div>
+    </div>
+    <script>
+function startReverseWatch() {
+    const clockElement = document.getElementById('clock');
+    
+    // Initialize the starting time (e.g., 1 hour from now)
+    let countdownTime = 3600; // seconds (1 hour)
+
+    function updateClock() {
+        // Calculate hours, minutes, and seconds
+        const hours = Math.floor(countdownTime / 3600);
+        const minutes = Math.floor((countdownTime % 6000) /60);
+        const seconds = countdownTime % 60;
+
+        // Format the time as HH:MM:SS
+        const formattedTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+
+        // Display the time
+        clockElement.textContent = formattedTime;
+
+        // Decrement the countdown time
+        countdownTime--;
+
+        // Stop the clock if the countdown reaches zero
+        if (countdownTime < 0) {
+            clearInterval(clockInterval);
+            clockElement.textContent = "00:00:00";
+        }
+    }
+
+    // Update the clock every second
+    const clockInterval = setInterval(updateClock, 1000);
+
+    // Initial call to display the clock immediately
+    updateClock();
+}
+
+// Start the reverse watch when the page loads
+window.onload = startReverseWatch;
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="2" cellpadding="40">
+        <tr><td>
+            
+            <h3 align="center">Parking</h3>
+            InTime: <input type="text" name="" id="a" size="3">
+           <input type="text" name="" id="b" size="3"><br><br>
+            OutTime: <input type="text" name="" id="c" size="3">
+           <input type="text" name="" id="d" size="3"><br><br>
+           Result:<input type="text" name="" id="e" size="7px"><br><br>
+           Price: <input type="text" name="" id="f" size="8"><br><br>
+           <CENTer>
+           <input type="button" value="OK" id="ok" onclick="show()"></CENTer>
+        </td></tr>
+    </table>
+    <script>
+        var a,b,c,d,e,f;
+        function show()
+        {
+            a=parseInt(document.getElementById("a").value)
+            b=parseInt(document.getElementById("b").value)
+            c=parseInt(document.getElementById("c").value)
+            d=parseInt(document.getElementById("d").value)
+            InTime=a*60+b
+            OutTime=c*60+d
+            Result=OutTime-InTime
+           var PricePerMinute=0.05;
+           var f= Result*PricePerMinute
+           document.getElementById("e").value=Result+"minutes";
+           document.getElementById("f").value = "$"+f.toFixed(2);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=], initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.slider {
+  display: flex;
+  overflow: hidden;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s ease;
+}
+
+button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+    </style>
+    
+    <div class="slider">
+      <img src="f.jpg" alt="Image 1">
+      <img src="d.jpg" alt="Image 2">
+      <img src="1.jpg" alt="Image 3">
+    </div>
+    <button class="prev" onclick="prevSlide()">Previous</button>
+    <button class="next" onclick="nextSlide()">Next</button>
+  </div>
+<script>
+    let slideIndex = 0;
+const slides = document.querySelectorAll('.slider img');
+
+function showSlide(index) {
+  if (index < 0) {
+    slideIndex = slides.length - 1;
+  } else if (index >= slides.length) {
+    slideIndex = 0;
+  }
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.transform = `translateX(${-slideIndex * 100}%)`;
+  }
+}
+
+function nextSlide() {
+  slideIndex++;
+  showSlide(slideIndex);
+}
+
+function prevSlide() {
+  slideIndex--;
+  showSlide(slideIndex);
+}
+
+showSlide(slideIndex);
+
+</script>
+  
+</body>
+</html>
+
+</body>
+</html>

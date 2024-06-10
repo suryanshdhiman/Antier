@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+    <fieldset>
+        <center><h3>String processing</h3></center><br>
+        <label>Enter name</label>
+<input type="text"id="s"><br>
+<label>Result</label>
+<input type="text"id="r"><br>
+<input type="button" value= "upper"id="up" onclick="upper()">
+<input type="button" value= "lower"id="do" onclick="lower()">
+<input type="button" value= "lenght" onclick="len()">
+<input type="button" value= "char" onclick="char()">
+<input type="button" value= "index" onclick="index()">
+<input type="button" value= "replace" onclick="re()">
+
+
+
+    </fieldset>
+    </form>
+    <script>
+        var s,r;
+        function upper()
+        {
+            s=document.getElementById("s").value
+            document.getElementById("r").value=s.toUpperCase()
+
+        }
+        function lower()
+        {
+            s=document.getElementById("s").value
+            document.getElementById("r").value=s.toLowerCase()
+
+        }
+        function len()
+        {
+            s=document.getElementById("s").value
+            document.getElementById("r").value=s.length
+
+        }
+        function char()
+        {
+            s=document.getElementById("s").value
+            document.getElementById("r").value=s.charAt("2")
+
+
+        }
+        function index()
+        {
+            s=document.getElementById("s").value
+            document.getElementById("r").value=s.indexOf("r")
+        }
+        function re()
+        {
+        s=document.getElementById("s").value
+            document.getElementById("r").value=s.replace("rat","pallvi")
+        
+
+        }
+    </script>
+</body>
+</html>

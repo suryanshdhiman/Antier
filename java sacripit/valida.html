@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+   
+    .fa-eye{
+        cursor:pointer;
+    }
+    #nameerror{
+        color: red;
+        
+    }
+    #age{
+        color: red;
+    }
+    #pe{
+        color: red;
+    }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div>
+        <center><h1>validation</h1></center>
+        <div>
+            <label>Name</label>
+            <input type="text" id="nm" onkeyup="show(this.value)" onclick="s(this.value)">
+            <div id="nameerror"></div>
+    <div><br>
+        <div>
+            <label>Age</label>
+            <input type="text" id="ag"onblur="show1(this.value)">
+            <div id="age"></div>
+    </div>
+    <br>
+    <div>
+        <label>password</label>
+        
+        <input type="password" id="pass"onblur="show2(this.value)">
+        <span class="password-toggle-icon" onclick="convert()"><i class="fas fa-eye"></i></span>
+        <div id="pe"></div>
+</div>
+<br>
+    </div>
+<input type="button" value="submit" onclick="sub">
+<script>
+    function convert()
+    {
+        if(pass.type=="password")
+        {
+        pass.type="text"
+        }
+    else
+    {
+
+    pass.type="password"
+    }
+    }
+    function s(value)
+    {
+ nameerror.textContent=value.trim()=="" ? "name requied":""
+    }
+function show(value)
+{
+
+if(!/^[a-z A-Z]*$/.test(value))
+nameerror.textContent= "plz enter between a to z "
+else
+{
+    nameerror.textContent= ""
+}
+
+}
+function show1(value)
+{
+if(value.trim()=="")
+age.textContent= "age requied"
+else if (value<18)
+age.textContent= "age morethan 18"
+else
+age.textContent=""
+
+}
+function show2(value)
+{
+    if(value.trim()=="")
+pe.textContent="password required"
+else if (value<5)
+pe.textContent= "password  too short"
+
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            border: 2px solid black;
+            background-color: aqua;
+            padding: 40px;
+            margin: 20px;
+            border-radius: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <center><h3>student infomation</h3></center>
+        <br>
+        <label> student name</label>
+        <input type="text"id="te">
+        <br>
+        <br>
+        <label>Enter subject</label>
+        <select name="sub" id="sub" onchange="updatecourse()">
+            <option value="sci"> science</option>
+            <option value="com">commerse</option>
+        </select>
+        <br>
+        <br>
+        <label>specialisation</label>
+        <select name="specialisation" id="sub2">
+
+        </select>
+    </div>
+    <script>
+        function updatecourse()
+        {
+            var d1=document.getElementById("sub");
+            var d2=document.getElementById("sub2");
+            d2.innerHTML=""
+            if(d1.value=="sci")
+            {
+                sub2.innerHTML=`<select id= "sub2">
+                    <option value="phy">physic</option>
+                    <option value="chem">chemtry</option>
+                    </select>`
+            }
+            else if(d1.value="com")
+            sub2.innerHTML=`<select id ="sub2">
+                    <option value="bus">busniess</option>
+                    <option value="acc">account</option>
+                    </select>`            
+
+            
+        }
+    </script>
+</body>
+</html>

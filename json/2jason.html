@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let stud =
+        [ 
+        {
+            
+                'id':1,
+                'name':'suryansh',
+                'pre':70
+            
+        },
+        {
+            
+            'id':2,
+            'name':'pallvi',
+            'pre':55
+        
+    },
+    {
+            
+            'id':3,
+            'name':'aarti',
+            'pre':60
+        
+    },
+    ]
+    console.log(stud);
+    //how to callca
+    let sum=stud.reduce((acc,cur)=>acc+cur.pre,0);
+    console.log(sum);
+    // how to short
+
+stud.sort((a,b)=>a.pre-b.pre);
+console.log(stud);
+
+//how to add new student
+let new_stud={
+    'id':4,
+    'name':'pal',
+    'pre':50,
+    
+}
+alldata=[stud,new_stud]
+console.log(alldata)
+       
+// how to delet
+let update_my= stud.filter((record=>record=>record.id!==2))
+console.log(update_my)
+       </script>
+    
+</body>
+</html>

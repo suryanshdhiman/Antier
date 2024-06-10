@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+div
+ {
+    border: 2px solid black;
+    margin: auto;
+    padding: 3px;
+text-align: center;
+font-size: larger;
+font-weight: 600;
+}
+
+</style>
+<body>
+   <div>
+    SELECT VISA: <br><br>
+
+    <label>Student Name : </label>
+    <input type ="text" id="name"><br><br>
+    <label>Select Country</label>
+    <select name=" select country" id="country" onchange="updatecountry()"> 
+        <option disabled  selected value="">Select country</option>
+        <option value="ind" >india</option>
+        <option value="pak">pakistan</option>
+    </select><br>
+<br>
+<label>Select state</label>
+    <select name=" select state" id="state" onchange="updatestate()" >  
+    </select><br><br>
+
+    <label>Select City</label>
+    <select name=" select city" id="city" >  
+    </select>
+   </div> 
+</body>
+<script>
+    var d1=document.getElementById("country");
+var d2=document.getElementById("state");
+var d3=document.getElementById("city");
+
+d2.innerHTML="";
+d3.innerHTML="";
+    function updatecountry()
+    {
+
+
+if(d1.value=="ind")
+{
+    state.innerHTML=`<select id="state">
+        <option value="hp">Himachal pradesh </option>
+        <option value="punjab">Punjab </option>
+        </select>`
+}
+else if (d1.value=="pak")
+{
+    state.innerHTML=`<select id='state'>
+        <option value="sindh">SINDH </option>
+        <option value="balochistan">BALOCHISTAN </option>
+        </select>`
+}
+}
+function updatestate()
+{
+    var d2=document.getElementById("state");
+var d3=document.getElementById("city");
+d3.innerHTML="";
+if (d2.value=="hp")
+{
+    city.innerHTML=`<select id="city">
+        <option value="bil">Bilaspur</option>
+        <option value="sh">Shimla </option>
+        </select>`
+}
+else if (d2.value=="punjab")
+{
+    city.innerHTML=`<select id='city'>
+        <option value="jal">jalandhar </option>
+        <option value="ludh">ludhiyana</option>
+        </select>`
+}
+ else if (d2.value=="sindh")
+{
+    city.innerHTML=`<select id="city">
+        <option value="kar">karachi</option>
+        <option value="th">thata </option>
+        </select>`
+}
+else if  (d2.value=="balochistan")
+{
+    city.innerHTML=`<select id='city'>
+        <option value="gaw">gawadar </option>
+        <option value="hu">hub</option>
+        </select>`
+}
+else
+{}
+}
+
+    
+</script>
+</html>

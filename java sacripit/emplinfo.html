@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <center><h1>Emp info</h1></center>
+<br>
+<label>Name</label>
+<input type="text"id=name>
+<br>
+<br>
+<label>Post</label>
+<input type="text"id=post>
+<br>
+<br>
+<label>Sal</label>
+<input type="text"id=sal><br>
+<br>
+<br>
+<input type="button" value="save" id="save" onclick="save1()">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="button" value="print" id="Reset"print="reset()" onclick="p()">
+
+    </fieldset>
+
+    
+    <br>
+    <table border="2px" class="table">
+        <thead>
+        <th> name</th>
+        <th> post</th>
+        <th> sal</th>
+        </thead>
+    </table>
+    
+
+    
+    <script>
+        let name= document.getElementById("name");
+        let post= document.getElementById("post");
+        let sal= document.getElementById("sal"); 
+        let save= document.getElementById("save");
+        let print= document.getElementById("print");
+    let i=0
+    let nameArr=[]
+    let salArr=[]
+    let postArr=[]
+    function save1()
+        {
+  nameArr.push(name.value)
+  salArr.push(sal.value)
+  postArr.push(post.value)
+
+
+
+console.log(nameArr,salArr,postArr)
+}
+    var x=0
+    function p()
+    {
+        for(var i=x; i<=nameArr.length;i++)
+        {
+            console.log(i);
+            document.querySelector(".table").innerHTML += `<tr><td>${nameArr[i]}</td><td>${postArr[i]}</td><td>${salArr[i]} rs</td></td>`;
+
+        }
+    }
+    </script>
+</body>
+</html>

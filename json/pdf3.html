@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <fieldset>
+        <label>HR</label>
+        <input type="text" id="hr" size="4">
+        <label>Min</label>
+        <input type="text" id="min" size="4">
+        <label>Sec</label>
+        <input type="text" id="sec" size="4">
+        <center><h2>Customer Bill</h2></center>
+        <br><br>
+        <label>Name</label>
+        <input type="text" id="name">
+        <br><br>
+
+        <label>Customer Photo: </label>
+        <input type="file" accept="image/*" id="photo"><br>
+        <br>
+        <label>Phone No</label>
+        <input type="text" id="num">
+        <br><br>
+        <label>Item Name</label>
+        <input type="text" id="iname">
+        <br><br>
+        <label>No of Items</label>
+        <input type="number" id="item">
+        <br><br>
+        <label>Price</label>
+        <input type="text" id="price">
+        <br><br>
+        <label>Discount</label>
+        <input type="text" id="dis">
+        <br><br>
+        <label>Total</label>
+        <input type="text" id="total">
+        <br>
+        <center><input type="button" value="Generate Bill" id="btn"></center>
+    </fieldset>
+
+    <script>
+        var x = setInterval(startChange, 1000);
+
+        function startChange() {
+            var d = new Date();
+            var hr = d.getHours();
+            var min = d.getMinutes();
+            var sec = d.getSeconds();
+            document.getElementById("hr").value = hr;
+            document.getElementById("min").value = min;
+            document.getElementById("sec").value = sec;
+        }
+
+        document.getElementById("btn").addEventListener('click', () => {
+            var name = document.getElementById("name").value;
+            var photo = document.getElementById("photo").files[0];
+            var num = document.getElementById("num").value;
+            var iname = document.getElementById("iname").value;
+            var item = document.getElementById("item").value;
+            var price = document.getElementById("price").value;
+            var dis = document.getElementById("dis").value;
+            var total = document.getElementById("total").value;
+
+            var d = new Date();
+            var hr = d.getHours();
+            var min = d.getMinutes();
+            var sec = d.getSeconds();
+            var time = `${hr}:${min}:${sec}`;
+            var date = `${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()}`;
+
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            doc.text(`Customer Bill`, 100, 10);
+            doc.text(`Date: ${date}`, 10, 20);
+            doc.text(`Time: ${time}`, 160, 20);
+            doc.text(`Name: ${name}`, 10, 30);
+            doc.text(`Phone No: ${num}`, 10, 40);
+            doc.text(`Item Name: ${iname}`, 10, 50);
+            doc.text(`No of Items: ${item}`, 10, 60);
+            doc.text(`Price: ${price}`, 10, 70);
+            doc.text(`Discount: ${dis}`, 10, 80);
+            doc.text(`Total: ${total}`, 10, 90);
+doc.setLineWidth(40)
+doc.setDrowColour('red')
+            doc.line(10,10,20,60)
+
+            if (photo) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const imgData = e.target.result;
+                    doc.addImage(imgData, 'JPEG', 130, 10, 30, 40); // Adjust the position and size as needed
+                    doc.save("my-bill.pdf");
+                };
+                reader.readAsDataURL(photo);
+            } else {
+                doc.save("my-bill.pdf");
+            }
+        });
+    </script>
+</body>
+</html>

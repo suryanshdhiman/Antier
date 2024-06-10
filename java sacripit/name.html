@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+</head>
+<body>
+    
+        
+        <h3 align="center" valign="top"> Blinking Text </h3>
+        <br><br>
+        <label for="a"><h1 id="a">Suryansh</h1></label>
+<br>
+<br>
+<input type="button" size="5" value="start" id="a" onclick="show()">
+        </td>
+        </tr>
+    </table>
+</body>
+<script>
+    var x;
+    var i=1;
+    
+        function show()
+        {
+            x=setInterval(startchange,500)
+        }
+        function startchange()
+        {
+            if(i==1)
+            {
+            document.getElementById("a").style.color="white"
+            i=2;
+            }        
+            else{
+            document.getElementById("a").style.color="red"
+            i=1;
+            }
+        }
+
+    
+</script>
+</html>

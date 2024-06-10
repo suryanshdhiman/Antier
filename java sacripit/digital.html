@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+        <fieldset>
+            <h2><center>Digital clock</center></h2><br>
+            <label>HR</label>
+            <input type="text" id="hr" size="5"><br>   
+            <label>Min</label>
+            <input type="text" id="min" size="5"><br>
+            <label>sec</label>
+            <input type="text" id="sec" size="5"><br><br>
+        
+            <script>
+                var x;
+                
+                    
+                    x=setInterval(startchange,1000)
+                    
+
+                    function startchange()
+                    {
+                        var d=new Date();
+                       var hr= d.getHours();
+                       var min=d.getMinutes();
+                        var sec=d.getSeconds();
+                        document.getElementById("hr").value=hr;
+                        document.getElementById("min").value=min;
+                        document.getElementById("sec").value=sec;
+
+                    }
+
+                
+            </script>
+    
+        </fieldset>
+    </form>
+</body>
+</html>

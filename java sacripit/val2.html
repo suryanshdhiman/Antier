@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .fa-eye {
+            cursor:pointer;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div>
+        <center><h1>Validation</h1></center>
+        <div>
+            <label>Name</label>
+            <input type="text" id="nm" onkeyup="showNameError(this.value)" onclick="showNameError(this.value)">
+            <div id="nameerror" class="error"></div>
+        </div>
+        <br>
+        <div>
+            <label>Age</label>
+            <input type="text" id="ag" onkeyup="showAgeError(this.value)" onclick="showAgeError(this.value)">
+            <div id="age" class="error"></div>
+        </div>
+        <br>
+        <div>
+            <label>Password</label>
+            <input type="password" id="pass" onkeyup="showPasswordError(this.value)">
+            <span class="password-toggle-icon" onclick="togglePasswordVisibility()"><i class="fas fa-eye"></i></span>
+            <div id="pe" class="error"></div>
+        </div>
+        <br>
+    </div>
+    <input type="button" value="submit" onclick="submitForm()">
+    <script>
+        var pass = document.getElementById("pass");
+
+        function togglePasswordVisibility() {
+            if (pass.type === "password") {
+                pass.type = "text";
+            } else {
+                pass.type = "password";
+            }
+        }
+
+        function showNameError(value) {
+            var nameError = document.getElementById("nameerror");
+            nameError.textContent = value.trim() === "" ? "Name required" : "";
+        }
+
+        function showAgeError(value) {
+            var ageError = document.getElementById("age");
+            if (value.trim() === "") {
+                ageError.textContent = "Age required";
+            } else if (parseInt(value) < 18) {
+                ageError.textContent = "Age must be 18 or above";
+            } else {
+                ageError.textContent = "";
+            }
+        }
+
+        function showPasswordError(value) {
+            var passwordError = document.getElementById("pe");
+            var passPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{5,}$/;
+            if (!passPattern.test(value)) {
+                passwordError.textContent = "Password error";
+            } else {
+                passwordError.textContent = '';
+            }
+        }
+
+        function submitForm() {
+            // Implement your form submission logic here
+        }
+    </script>
+</body>
+</html>

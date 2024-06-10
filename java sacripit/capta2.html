@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captcha Example</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
+    <style>
+        #image {
+            margin-top: 10px;
+            box-shadow: 5px 5px 5px 5px gray;
+            width: 60px;
+            padding: 20px;
+            font-weight: 400;
+            padding-bottom: 0px;
+            height: 40px;
+            user-select: none;
+            text-decoration: line-through;
+            font-style: italic;
+            font-size: x-large;
+            border: red 2px solid;
+            margin-left: 10px;
+        }
+        #user-input {
+            box-shadow: 5px 5px 5px 5px gray;
+            width: auto;
+            margin-right: 10px;
+            padding: 10px;
+            padding-bottom: 0px;
+            height: 40px;
+            border: red 0px solid;
+        }
+        input {
+            border: 1px black solid;
+        }
+        .inline {
+            display: inline-block;
+        }
+        #btn {
+            box-shadow: 5px 5px 5px grey;
+            color: aqua;
+            margin: 10px;
+            background-color: brown;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body onload="generate()">
+    <div id="user-input" class="inline">
+        <input type="text" id="submit" placeholder="Captcha code" />
+    </div>
+    <div class="inline" onclick="generate()">
+        <i class="fas fa-sync"></i>
+    </div>
+    <div id="image" class="inline" selectable="False"></div>
+    <input type="button" id="btn" value="Submit" onclick="printmsg()" />
+    <p id="key"></p>
+
+    <script>
+        let captcha;
+        function generate() {
+            // Clear old input
+            document.getElementById("submit").value = "";
+            // Access the element to store the generated captcha
+            captcha = document.getElementById("image");
+            let uniquechar = "";
+            const randomchar = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            for (let i = 0; i < 5; i++) {
+                uniquechar += randomchar.charAt(Math.floor(Math.random() * randomchar.length));
+            }
+            // Store generated input
+            captcha.innerHTML = uniquechar;
+        }
+
+        function printmsg() {
+            var input = document.getElementById("submit").value;
+            var result = document.getElementById("key");
+            if (captcha.innerHTML === input) {
+                result.innerHTML = "<span style='color: green;'>Match</span>";
+            } else {
+                result.innerHTML = "<span style='color: red;'>Not Match</span>";
+            }
+        }
+
+        document.getElementById("submit").addEventListener("input", function() {
+            document.getElementById("key").innerHTML = "";
+        });
+    </script>
+</body>
+</html>

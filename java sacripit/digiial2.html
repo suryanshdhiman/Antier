@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Current Time:</label>
+    <input type="time" id="time">
+</body>
+<script>
+    var x = setInterval(startChange, 1000);
+
+    function startChange() {
+        var d = new Date();
+        var hr = String(d.getHours()).padStart(2, '0');
+        var min = String(d.getMinutes()).padStart(2, '0');
+        // var sec = String(d.getSeconds()).padStart(2, '0'); // Not used in <input type="time">
+        
+        // Format the time string as "HH:MM"
+        var timeString = hr + ":" + min;
+        
+        document.getElementById("time").value = timeString;
+    }
+</script>
+</html>
+

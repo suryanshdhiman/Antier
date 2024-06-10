@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form>
+    <fieldset>
+        <input type="button" value="series1" onclick="series()">
+    </fieldset>
+</form>
+<script>
+    var i,j,row,num;
+    let num=1;
+    function series()
+    {
+    document.write("<center><h1>")
+    for(i=1;i<=3;i++)
+{
+    let row="";
+    for(j=1;j<=i;j++)
+row += num;
+num++;
+
+    document.write(j+"   ");
+
+}
+document.write("<br/>")
+    }
+
+</script>
+</body>
+</html>

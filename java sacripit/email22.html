@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+   
+    
+    <div class="login">
+        <form>
+            <h2>log in</h2>
+            <label>Email </label>
+            <input type="text"id="t"> <br>
+            <br>
+            <label>password</label>
+            <input type="password" id="p">
+            <br>
+            <br>
+            <label id="label"></label><br>
+        
+            <input type="button" value="sumbit"  onclick="match()">
+            <input type="button" value="Reset" onclick="reset()">
+        </form>
+    </div>
+    <script>
+
+        var t,p;
+        var a=3;
+function match()
+{
+    t=document.getElementById("t").value;
+    p=document.getElementById("p").value;
+    if(t=="suryanshdhiman052@gmail.com" && p=="1234")
+    {
+        alert("log in sucessfuly");
+    }
+    else
+    {
+        alert("failed");
+        count();
+    }
+}
+function reset()
+{
+    document.getElementById("t").value;
+    document.getElementById("p").value;
+    document.getElementById("t").focus;
+}
+function count()
+{
+    a--;
+    var label=document.getElementById("label");
+    label.innerHTML="incorret password.!" + a +"chanes left";
+    if(a==0)
+    {
+        document.getElementById("t").style.display="none";
+    document.getElementById("p").style.display="none";
+    }
+}
+    </script>
+</body>
+</html>

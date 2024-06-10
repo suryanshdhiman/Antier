@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+    <style>
+        body {
+            display: grid;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            padding: 10px;
+            background-color: white;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+        .producttitle
+        {
+            margin: 2px;
+        }
+        .box {
+            display: grid;
+            border: 2px solid grey;
+            box-shadow: 1px 2px 3px 4px lightslategrey;
+            background-color: whitesmoke;
+            padding: 20px;
+            text-align: center;
+            height: 80vh;
+            margin: 1px;
+        }
+        .productimage {
+            border-radius: 1000px;
+            padding: 1px ;
+            align-items: center;
+            border: 2px solid purple;
+            width: 160px;
+            height: 160px; 
+            margin: 20px;
+            
+        }
+        .star {
+            color: gold;
+        }
+        input[type=button] {
+            margin-top: 20px;
+            color: black;
+            font-weight: 700;
+            background-color: brown;
+            margin: 1px;
+        }
+        .productname {
+            font-weight: bold;
+            color: brown;
+            margin: 1px;
+        }
+        .productprice {
+            font-weight: bold;
+            color:purple;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin: 1px;
+        }
+        input[type=button]:hover {
+        
+            background-color: aqua;
+        }
+        .productprice1 {
+            font-weight: bold;
+            color: green;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin: 2px;
+        }
+        .productviews i {
+            margin-left: 5px;
+            margin: 2px;
+        }
+        .strikethrough {
+            text-decoration: line-through;
+        }
+        .container
+        {
+            display: grid;
+            grid-template-columns: 230px 230px 230px;
+            grid-gap: 20px;
+        }
+    
+    </style>
+</head>
+<body>
+<div class="container">
+
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const products = [
+            {
+                "title": "Best Selling Product",
+                "name": "Girly perfume",
+                "price": "450 Rs",
+                "price1":"300 Rs",
+                "rating": 6,
+                "views": "2000 views",
+                "image": "pro.jpg"
+            },
+            {
+                "title": "New Product",
+                "name": "Awesome Cologne",
+                "price": "600 Rs",
+                "price1": "450 Rs",
+                "rating": 7,
+                "views": "1500 views",
+                "image": "pro.jpg"
+            },
+            {
+                "title": "Popular Product",
+                "name": "Elegant Watch",
+                "price": "800 Rs",
+                "price1": "600 Rs",
+                "rating": 8,
+                "views": "2500 views",
+                "image": "pro.jpg"
+            }
+        ];
+
+        const container = document.querySelector('.container');
+
+        products.forEach(prod => {
+            const box = document.createElement('div');
+            box.classList.add('box');
+
+            box.innerHTML = `
+                <h2 class="producttitle">${prod.title}</h2>
+                <p class="productname">${prod.name}</p>
+                <p class="productprice"><span class="strikethrough">${prod.price}</span></p>
+                <p class="productprice1">${prod.price1}</p>
+                <img class="productimage" src="${prod.image}">
+                <div class="productrating"></div>
+                <p class="productviews">${prod.views} <i class="far fa-eye"></i></p>
+                <div class="quantity">
+                    <label for="quantity">Quantity:</label><br>
+                    <input type="number" id="quantity" placeholder="0">
+                    <input type="button" value="+" onclick="increasequantity()">
+                    <input type="button" value="-" onclick="decreasequantity()">
+                </div><br>
+                <div class="buttons">
+                    <input type="button" value="ADD TO CART" onclick="ad()">
+                    <input type="button" value="BUY">
+                </div>
+                <div class="preview"></div>
+            `;
+
+            // Clear existing stars
+            const ratingbox = box.querySelector('.productrating');
+            ratingbox.innerHTML = "";
+            const stars = prod.rating;
+            for (let i = 0; i < stars; i++) {
+                ratingbox.innerHTML += '<span class="star"> &#9733;</span>';
+            }
+
+            container.appendChild(box);
+        });
+    });
+
+    function increasequantity() {
+        let quantity = document.getElementById("quantity");
+        quantity.value = parseInt(quantity.value) + 1;
+    }
+
+    function decreasequantity() {
+        let quantity = document.getElementById("quantity");
+        if (parseInt(quantity.value) > 1) {
+            quantity.value = parseInt(quantity.value) - 1;
+        }
+    }
+
+    function ad() {
+        const newWindow = window.open();
+        newWindow.document.body.innerHTML = '<h1 style=color:green>This item is added to cart</h1>';
+    }
+</script>
+</body>
+</html>

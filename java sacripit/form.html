@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <center><strong>Print Score</strong></center>
+<label>Enter A</label>
+<input type="text"name=""id="a">age <br>
+<label>Enter B</label>
+<input type="text"name=""id="b">age <br>
+<label>Enter C</label>
+<input type="text"name=""id="c">age <br>
+<input type="button" value="print" onclick="show()">&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+<input type="button" value="reset" onclick="reset()">&nbsp;&nbsp;
+<br>
+<label>reslut</label>
+<input type="text"name=""id="r"> <br>
+
+        </fieldset>
+
+    </form>
+    <script>
+        var a,b,C
+        function show()
+        {
+    
+            a=parseInt(document.getElementById("a").value)
+        b=parseInt(document.getElementById("b").value)
+        c=parseInt(document.getElementById("c").value)
+        if(a>b && a>c)
+        {
+           if(b>C)
+           document.write(a+"   "+b+"     "+c)
+        else
+        document.write(a+"   "+c+"   "+b)
+        }
+        if(b>c && b>a)
+        {
+           if(c>a)
+           document.write(b+"   "+c+"   "+a)
+        else
+        document.write(b+"  "+a+"  "+c)
+        }
+        if(c>a && c>b)
+        {
+           if(a>b)
+           document.write(c+"   "+a+"  "+b)
+        else
+        document.write(c+"   "+b+"   "+a)
+        }
+    }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .main,
+      .main2 {
+        background-color: #ffffff;
+        border: 2px solid #000000;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin: 10px;
+        text-align: center;
+      }
+      .main {
+        width: 30vw;
+        min-width: 300px;
+        padding: 30px;
+        margin-top: 20%;
+      }
+      .main2 {
+        width: 30vw;
+        min-width: 300px;
+        height: 30vh;
+        padding: 20px;
+        margin-top: 15px;
+      }
+      h1 {
+        color: #333333;
+        margin-bottom: 20px;
+      }
+      label {
+        display: block;
+        margin-top: 10px;
+        font-weight: bold;
+        color: #555555;
+      }
+      input[type="text"] {
+        width: calc(100% - 20px);
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #cccccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+      input[type="button"] {
+        background-color: #007bff;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        margin: 10px 5px;
+        cursor: pointer;
+        transition: background-color 0.1s;
+      }
+      input[type="button"]:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="main">
+        <h1>EMS</h1>
+
+        <label for="name">Name</label>
+        <input type="text" id="name" />
+        <br />
+        <label for="email">Email</label>
+        <input type="text" id="email" />
+        <br />
+        <label for="city">City</label>
+        <input type="text" id="city" />
+        <br />
+        <label for="amount">Amount</label>
+        <input type="text" id="amount" />
+        <br />
+        <input type="button" value="SAVE" onclick="save()" />
+        <input type="button" value="DELETE" onclick="remove()" />
+        <input type="button" value="SORT" onclick="sort()" />
+        <input type="button" value="SUM" onclick="sum()" />
+        <br />
+        <input
+          type="button"
+          id="previous"
+          value="PREVIOUS"
+          onclick="previous()"
+        />
+        <input type="button" id="next" value="NEXT" onclick="next()" />
+      </div>
+      <div class="main2" id="main2">
+        <table border="2px solid black" id="table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>City</th>
+            <th>Amount</th>
+        </tr>
+        </thead>
+
+        <tbody id="tbody">
+
+     
+
+            
+        </tbody>
+
+    </table>
+
+      </div>
+    </div>
+
+    <script>
+      var employeArr = [];
+
+      function save() {
+        var name1 = document.getElementById("name").value;
+        var email1 = document.getElementById("email").value;
+        var city1 = document.getElementById("city").value;
+        var amount1 =  parseInt(document.getElementById("amount").value);
+        var main2 = document.getElementById("main2");
+        var table = document.getElementById("tbody");
+
+        let employe = {
+         "Name": name1,
+         "Email": email1,
+          "City": city1,
+          "Amount": amount1,
+        };
+
+        employeArr.push(employe);
+
+        console.log(employeArr);
+        table.innerHTML=""
+        employeArr.forEach(value =>{
+            const row = document.createElement("tr");
+
+
+            row.innerHTML=
+            `
+            <td>${value.Name}</td>
+            <td>${value.Email}</td>
+            <td>${value.City}</td>
+            <td>${value.Amount}</td>
+            `;
+            table.appendChild(row);
+        })
+
+
+      }
+        
+    
+    
+    
+          function remove(){
+            var table = document.getElementById("tbody");
+
+            var remove = employeArr.filter(record=> record.Email!=document.getElementById("email").value);
+            table.innerHTML=""
+        remove.forEach(value =>{
+            const row = document.createElement("tr");
+
+
+            row.innerHTML=
+            `
+            <td>${value.Name}</td>
+            <td>${value.Email}</td>
+            <td>${value.City}</td>
+            <td>${value.Amount}</td>
+            `;
+            table.appendChild(row);
+        })
+          }
+            
+    
+    
+    
+       
+    
+          function sum(){
+    
+            var sum = employeArr.reduce((arr,curr)=> arr+curr.Amount,0)
+    
+            console.log(sum);
+            table.innerHTML=""
+            table.innerHTML= "SUM OF AMOUNT IS "+ sum
+
+    
+    
+          }
+          function sort(){
+            var table = document.getElementById("tbody");
+    
+    
+            var sort = employeArr.sort((a,b)=> a.Amount-b.Amount);
+            console.log(sort) 
+            table.innerHTML=""
+        sort.forEach(value =>{
+            const row = document.createElement("tr");
+
+
+            row.innerHTML=
+            `
+            <td>${value.Name}</td>
+            <td>${value.Email}</td>
+            <td>${value.City}</td>
+            <td>${value.Amount}</td>
+            `;
+            table.appendChild(row);
+        })
+          }
+
+    </script>
+  </body>
+</html>
